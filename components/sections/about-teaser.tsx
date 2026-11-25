@@ -14,7 +14,7 @@ export function AboutTeaser() {
         </div>
         <Container className="flex flex-col justify-center py-16 lg:max-w-none lg:px-16 lg:py-24 xl:px-24">
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-gold">The Company</p>
-          <h2 className="max-w-lg text-balance text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">A Qatar-based contractor you can verify and reach directly.</h2>
+          <h2 className="max-w-xl text-balance font-display text-4xl font-normal leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">A Qatar-based contractor you can <em className="italic text-gold">verify</em> and reach directly.</h2>
           <p className="mt-6 max-w-lg text-lg leading-relaxed text-white/75">
             We supply manpower, paint buildings, support hospitality operations and carry out construction contracts. Our license number is public, our phones are answered by the team and our work is described plainly.
           </p>

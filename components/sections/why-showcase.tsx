@@ -57,7 +57,7 @@ function Panel({ index }: { index: number }) {
       <div className="mt-6 flex items-start gap-4">
         <Icon className="mt-1 size-7 shrink-0 text-gold-dark" strokeWidth={1.5} aria-hidden />
         <div>
-          <h3 className="text-xl font-semibold text-navy">{s.title}</h3>
+          <h3 className="font-display text-3xl text-navy">{s.title}</h3>
           <p className="mt-2 leading-relaxed text-charcoal/75">{s.text}</p>
           <ul className="mt-4 space-y-2">
             {s.points.map((p) => (
@@ -92,7 +92,7 @@ export function WhyShowcase() {
               >
                 <span aria-hidden className={cn("absolute inset-y-0 start-0 w-1 origin-top bg-gold transition-transform duration-300", on ? "scale-y-100" : "scale-y-0 group-hover:scale-y-50")} />
                 <span className={cn("text-sm font-semibold tabular-nums transition-colors", on ? "text-gold-dark" : "text-charcoal/40")}>{String(i + 1).padStart(2, "0")}</span>
-                <span className="text-lg font-semibold leading-snug sm:text-xl">{s.title}</span>
+                <span className="font-display text-2xl leading-snug sm:text-3xl">{s.title}</span>
               </button>
               {/* Mobile: panel opens inline under its row */}
               {on && <div className="pb-8 lg:hidden" role="tabpanel" aria-labelledby={`why-tab-${i}`}><Panel index={i} /></div>}

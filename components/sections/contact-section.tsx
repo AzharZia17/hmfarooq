@@ -9,7 +9,7 @@ const label = "text-xs font-semibold uppercase tracking-[0.2em] text-charcoal/55
 
 export function ContactSection({
   defaultService,
-  heading = "Start with a conversation.",
+  heading = "Start with a *conversation.*",
   description = "Call, message us on WhatsApp, or write it down below. Whichever you choose, you reach the team directly.",
   brief,
   id = "contact",

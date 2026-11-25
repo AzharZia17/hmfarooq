@@ -31,7 +31,7 @@ export function Navbar() {
   const activeHref = NAV_LINKS.find((l) => isActive(l.href))?.href ?? "";
 
   return (
-    <header className={cn("sticky top-0 z-50 border-b bg-white/95 backdrop-blur transition-[border-color] duration-300", scrolled ? "border-navy/15" : "border-navy/10")}>
+    <header className={cn("sticky top-0 z-50 border-b bg-white transition-[border-color] duration-300", scrolled ? "border-navy/15" : "border-navy/10")}>
       {/* Utility strip: collapses once the page is scrolled */}
       <div className={cn("grid bg-navy-deep text-white transition-[grid-template-rows] duration-300", scrolled ? "grid-rows-[0fr]" : "grid-rows-[1fr]")}>
         <div className="overflow-hidden">

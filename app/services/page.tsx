@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <PageHeader image={IMAGES.cta} title="What we do, in detail." description="Four services, each described by what it covers and who it is for." crumbs={[{ label: "Services" }]} />
+      <PageHeader image={IMAGES.cta} title="What we do, *in detail.*" description="Four services, each described by what it covers and who it is for." crumbs={[{ label: "Services" }]} />
       <ServicesDetail />
       <CtaSection title="Not sure which service fits?" text="Describe the job in a few lines and we will tell you how we would approach it." />
     </>

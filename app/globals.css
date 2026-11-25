@@ -4,10 +4,11 @@
   --color-navy: #14263d;
   --color-navy-deep: #0f1d2f;
   --color-charcoal: #20252b;
-  --color-paper: #f8f8f6;
+  --color-paper: #f5f2ec;
   --color-gold: #c89b45;
   --color-gold-dark: #a87e2e;
   --color-mist: #e8eaed;
+  --font-display: var(--font-display), Georgia, "Times New Roman", serif;
   --font-sans: var(--font-inter), var(--font-arabic), system-ui, sans-serif;
 }
 
@@ -43,3 +44,30 @@ body {
 .drawer-in { animation: drawer-in 0.2s ease-out; }
 [dir="rtl"] .drawer-in { animation-name: drawer-in-rtl; }
 .fade-in { animation: fade-in 0.15s ease-out; }
+
+/* Display type: Arabic falls back to the Arabic face, which has no italic */
+[dir="rtl"] .font-display { font-family: var(--font-arabic), serif; font-style: normal; }
+[dir="rtl"] .font-display em { font-style: normal; }
+
+/* Signature motif: gold crop marks, like the corner registration marks on a drawing plate */
+.crop-marks { position: relative; }
+.crop-marks::before, .crop-marks::after {
+  content: ""; position: absolute; width: 1.75rem; height: 1.75rem; pointer-events: none; z-index: 2;
+  border: 0 solid var(--color-gold);
+}
+.crop-marks::before { top: -0.6rem; inset-inline-start: -0.6rem; border-top-width: 2px; border-inline-start-width: 2px; }
+.crop-marks::after { bottom: -0.6rem; inset-inline-end: -0.6rem; border-bottom-width: 2px; border-inline-end-width: 2px; }
+
+/* Calm entrance for the hero (respects reduced motion below) */
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+.rise { opacity: 0; animation: rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+.rise-2 { animation-delay: 0.12s; }
+.rise-3 { animation-delay: 0.24s; }
+.rise-4 { animation-delay: 0.36s; }
+@media (prefers-reduced-motion: reduce) { .rise { opacity: 1; animation: none; } }
+
+/* Hairline "ruled paper" backdrop for light sections */
+.bg-ruled {
+  background-image: linear-gradient(to right, rgba(20, 38, 61, 0.05) 1px, transparent 1px);
+  background-size: calc(100% / 12) 100%;
+}

@@ -33,7 +33,7 @@ function FooterLink({ href, children, external }: { href: string; children: Reac
 
 export function Footer() {
   return (
-    <footer className="relative isolate overflow-hidden bg-navy-deep pb-28 text-white md:pb-0">
+    <footer className="relative isolate overflow-hidden bg-navy-deep text-white">
       <Image src={IMAGES.towers.src} alt="" fill sizes="100vw" className="-z-20 object-cover opacity-[0.05] grayscale" />
 
       {/* Big call-to-talk band */}
@@ -41,11 +41,11 @@ export function Footer() {
         <Container className="grid gap-10 py-16 lg:grid-cols-12 lg:items-end lg:py-24">
           <div className="lg:col-span-6">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Ready when you are</p>
-            <h2 className="mt-4 text-balance text-3xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-5xl">Let&apos;s talk about your next job.</h2>
+            <h2 className="mt-4 text-balance font-display text-5xl font-normal leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">Let&apos;s talk about your <em className="italic text-gold">next job.</em></h2>
           </div>
           <div className="space-y-1 lg:col-span-6 lg:text-end" dir="ltr">
             {COMPANY.phones.map((p) => (
-              <a key={p.tel} href={telLink(p.tel)} className="group flex items-center gap-3 border-b border-white/10 py-3 text-3xl font-semibold tracking-tight transition-colors hover:text-gold sm:text-4xl lg:justify-end">
+              <a key={p.tel} href={telLink(p.tel)} className="group flex items-center gap-3 border-b border-white/10 py-3 font-display text-4xl tracking-tight transition-colors hover:text-gold sm:text-5xl lg:justify-end">
                 {p.display}
                 <ArrowUpRight className="size-6 text-gold transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" aria-hidden />
               </a>
@@ -94,6 +94,9 @@ export function Footer() {
             </a>
           </div>
         </Container>
+      </div>
+      <div aria-hidden className="pointer-events-none select-none overflow-hidden border-t border-white/10 pt-6 pb-20 text-center md:pb-0 font-display leading-[0.8] text-white/[0.06]">
+        <span className="block translate-y-[0.08em] whitespace-nowrap text-[17vw]" dir="ltr">HM Farooq</span>
       </div>
     </footer>
   );

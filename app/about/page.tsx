@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <PageHeader image={IMAGES.hero} title="The company behind the work." description="Who we are, what we stand for and what working with us looks like." crumbs={[{ label: "About Us" }]} />
+      <PageHeader image={IMAGES.hero} title="The company behind the *work.*" description="Who we are, what we stand for and what working with us looks like." crumbs={[{ label: "About Us" }]} />
       <StorySection />
       <MissionBand />
       <ValuesSection />

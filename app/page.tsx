@@ -1,5 +1,6 @@
 import { Hero } from "@/components/sections/hero";
-import { ServicesOverview } from "@/components/sections/services-overview";
+import { ServicePanels } from "@/components/sections/service-panels";
+import { GlanceBand } from "@/components/sections/glance-band";
 import { AudienceSection } from "@/components/sections/audience-section";
 import { AboutTeaser } from "@/components/sections/about-teaser";
 import { ProcessSection } from "@/components/sections/process-section";
@@ -10,10 +11,11 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <ServicesOverview />
+      <ServicePanels />
+      <GlanceBand />
       <AudienceSection />
       <AboutTeaser />
-      <ProcessSection tone="white" />
+      <ProcessSection tone="paper" />
       <TestimonialsSection />
       <CtaSection />
     </>

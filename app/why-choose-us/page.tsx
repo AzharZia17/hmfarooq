@@ -16,10 +16,10 @@ export const metadata: Metadata = {
 export default function WhyChooseUsPage() {
   return (
     <>
-      <PageHeader image={IMAGES.towers} title="Why clients choose us." description="Six reasons, in plain terms. Select each one to see what it means in practice." crumbs={[{ label: "Why Choose Us" }]} />
+      <PageHeader image={IMAGES.towers} title="Why clients *choose* us." description="Six reasons, in plain terms. Select each one to see what it means in practice." crumbs={[{ label: "Why Choose Us" }]} />
       <Section>
         <Container>
-          <SectionHeading eyebrow="Our Strengths" title="What you can count on." />
+          <SectionHeading eyebrow="Our Strengths" title="What you can count *on.*" />
           <div className="mt-14">
             <WhyShowcase />
           </div>

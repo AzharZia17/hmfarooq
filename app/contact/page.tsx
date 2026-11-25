@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <PageHeader title="Talk to us directly." description="Call, message or send the details. Pick whichever is quickest for you." crumbs={[{ label: "Contact" }]} />
+      <PageHeader title="Talk to us *directly.*" description="Call, message or send the details. Pick whichever is quickest for you." crumbs={[{ label: "Contact" }]} />
       <ContactSection />
       <FaqSection tone="white" />
     </>

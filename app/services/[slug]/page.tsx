@@ -35,11 +35,11 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
             <div className="space-y-5 text-lg leading-relaxed text-charcoal/80">
               {s.intro.map((p) => <p key={p}>{p}</p>)}
             </div>
-            <h2 className="mt-14 text-2xl font-semibold tracking-tight text-navy">What this includes</h2>
+            <h2 className="mt-14 font-display text-4xl text-navy">What this includes</h2>
             <dl className="mt-6 border-t border-navy/15">
               {s.offerings.map((o) => (
                 <div key={o.name} className="grid gap-1 border-b border-navy/15 py-4 sm:grid-cols-[14rem_1fr] sm:gap-6">
-                  <dt className="font-semibold text-navy">{o.name}</dt>
+                  <dt className="font-display text-xl text-navy">{o.name}</dt>
                   <dd className="text-charcoal/70">{o.detail}</dd>
                 </div>
               ))}

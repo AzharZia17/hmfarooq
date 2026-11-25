@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Container, Section } from "@/components/ui/container";
+import { Frame } from "@/components/ui/frame";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { LicenseBadge } from "@/components/ui/license-badge";
 import { IMAGES } from "@/lib/images";
@@ -9,7 +10,7 @@ export function StorySection() {
     <Section>
       <Container className="grid gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-5">
-          <SectionHeading eyebrow="Who We Are" title="One company, four ways to get a job done." />
+          <SectionHeading eyebrow="Who We Are" title="One company, four ways to *get it done.*" />
         </div>
         <div className="space-y-6 text-lg leading-relaxed text-charcoal/80 lg:col-span-7">
           <p>
@@ -20,8 +21,10 @@ export function StorySection() {
           </p>
           <LicenseBadge variant="block" className="mt-4 max-w-md" />
         </div>
-        <div className="relative aspect-[21/9] overflow-hidden bg-mist lg:col-span-12">
-          <Image src={IMAGES.pageHeader.src} alt={IMAGES.pageHeader.alt} fill sizes="100vw" className="object-cover" />
+        <div className="lg:col-span-12">
+          <Frame className="aspect-[21/9]">
+            <Image src={IMAGES.pageHeader.src} alt={IMAGES.pageHeader.alt} fill sizes="100vw" className="object-cover" />
+          </Frame>
         </div>
       </Container>
     </Section>

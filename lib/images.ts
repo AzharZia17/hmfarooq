@@ -40,16 +40,17 @@ const g = (id: string, category: GalleryCategory, title: string, file: string, a
 
 // Set isCompanyProject = true once an image is confirmed as an actual HM Farooq project.
 export const GALLERY: GalleryItem[] = [
-  g("c1", "Construction", "Steel-frame building works", "construction-steel-structure.jpg", "Workers on a steel-frame building site", COMPANY_SUPPLIED, "Steel framing and access platforms: the stage where a structure takes its shape."),
-  g("c2", "Construction", "Concrete and reinforcement", "construction-rebar-concrete.jpg", "Worker curing a reinforced concrete deck beside a concrete pump", COMPANY_SUPPLIED, "Reinforcement laid and concrete curing, the unseen strength inside a slab."),
-  g("c3", "Construction", "Site works and services", "construction-site-team.jpg", "Site team working on a building with scaffolding and a crane", COMPANY_SUPPLIED, "A working site: scaffolding, services and trades coordinated side by side."),
-  g("c4", "Construction", "Lusail City, Qatar", "lusail-city.jpg", "Modern towers in Lusail City, Qatar", CREDITS.lusail, "Lusail, one of Qatar's newest districts, where new buildings keep rising."),
-  g("p1", "Painting", "Facade painting", "painting-facade-rope.jpg", "Painters working on a building facade", COMPANY_SUPPLIED, "Facade painting at height, where preparation and technique matter most."),
-  g("p2", "Painting", "Exterior wall painting", "painting-suspended-platform.jpg", "Painters rolling paint onto an exterior wall from a suspended platform", COMPANY_SUPPLIED, "A suspended platform lets crews finish tall exterior walls evenly."),
-  g("p3", "Painting", "Scaffold painting", "painting-scaffold.jpg", "Painters in white overalls working on a scaffold", COMPANY_SUPPLIED, "Scaffold access for careful window-line and trim work."),
-  g("m1", "Manpower", "Skilled site workforce", "workers-masonry.jpg", "Workers in safety helmets and high-visibility vests on a site", COMPANY_SUPPLIED, "Protective gear and teamwork on a masonry and finishing task."),
-  g("m2", "Manpower", "Groundwork crew", "workers-groundwork.jpg", "Workers in safety gear laying groundwork", COMPANY_SUPPLIED, "A groundwork crew preparing the base for what comes next."),
-  g("m3", "Manpower", "Paving crew", "workers-paving.jpg", "Road crew with paving machinery", COMPANY_SUPPLIED, "Paving work, where a coordinated crew keeps a road moving to schedule."),
+  g("c1", "Construction", "Tower crane and concrete frame", "project-crane-site.jpg", "Building under construction with a tower crane", COMPANY_SUPPLIED, "A concrete frame rising beneath a tower crane: the lifting and sequencing that keeps a build moving."),
+  g("c2", "Construction", "Steel frame", "project-steel-frame.jpg", "Structural steel frame of a building under construction", COMPANY_SUPPLIED, "Steelwork in place, the skeleton every later trade builds on."),
+  g("c3", "Construction", "Scaffolded building", "project-scaffolding.jpg", "Scaffolding around a building under construction", COMPANY_SUPPLIED, "Scaffolding gives safe access to every level while works progress."),
+  g("c4", "Construction", "Concrete building works", "project-concrete-building.jpg", "Multi-storey concrete building under construction", COMPANY_SUPPLIED, "A multi-storey building taking shape, floor by floor."),
+  g("p1", "Painting", "Facade painting", "painting-facade-rope.jpg", "Painters working on a building facade", COMPANY_SUPPLIED, "Rope access on a tall facade, where preparation and technique matter most."),
+  g("p2", "Painting", "Exterior wall finishing", "project-roller-painting.jpg", "Gloved hand rolling white paint onto an exterior wall", COMPANY_SUPPLIED, "A first coat going on: even, careful rolling on a prepared surface."),
+  g("p3", "Painting", "Interior painting", "project-interior-painter.jpg", "Painter in overalls rolling paint onto an interior wall", COMPANY_SUPPLIED, "Interior walls painted clean and even in a finished room."),
+  g("p4", "Painting", "Finished exterior panels", "project-painted-panels.jpg", "Exterior wall finished in contrasting grey and white panels", COMPANY_SUPPLIED, "The result: crisp colour panels on a completed exterior wall."),
+  g("m1", "Manpower", "Site team", "project-worker-team.jpg", "Five workers in safety helmets and high-visibility vests facing a building site", COMPANY_SUPPLIED, "A team briefed and ready, in protective gear, before work begins."),
+  g("m2", "Manpower", "Safety first", "project-helmets-scaffold.jpg", "Yellow and white safety helmets in front of scaffolding with workers behind", COMPANY_SUPPLIED, "Protective equipment is the starting point of every site assignment."),
+  g("m3", "Manpower", "Groundwork crew", "workers-groundwork.jpg", "Workers in safety gear laying groundwork", COMPANY_SUPPLIED, "A groundwork crew preparing the base for what comes next."),
   g("h2", "Hospitality", "Events hall interior, Doha", "hall-katara-doha.jpg", "Large multi-purpose hall interior at Katara Cultural Village, Doha", CREDITS.katara, "A large events hall in Doha, where the setting depends on the people running it."),
   g("h1", "Hospitality", "Hotel in Doha", "hotel-sheraton-doha.jpg", "Hotel entrance in Doha, Qatar", CREDITS.sheraton, "A Doha hotel entrance: the first point of contact for every guest."),
 ];
@@ -58,5 +59,6 @@ export const ALL_CREDITS: { title: string; credit: Credit }[] = [
   { title: "Hero image — West Bay, Doha", credit: CREDITS.westBay },
   { title: "Page headers — Doha Corniche skyline", credit: CREDITS.corniche },
   { title: "Doha towers", credit: CREDITS.towers },
+  { title: "Call-to-action background — Lusail City", credit: CREDITS.lusail },
   ...GALLERY.map((x) => ({ title: x.title, credit: x.creditInfo })),
 ];

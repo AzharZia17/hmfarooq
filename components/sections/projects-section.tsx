@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import * as Dialog from "@radix-ui/react-dialog";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Container, Section } from "@/components/ui/container";
@@ -10,9 +9,9 @@ import { GALLERY, GALLERY_CATEGORIES, type GalleryCategory } from "@/lib/images"
 import { cn } from "@/lib/utils";
 
 const STORIES: Record<GalleryCategory, { title: string; text: string }> = {
-  Construction: { title: "Where buildings take shape", text: "Steel going up, concrete curing, scaffolding and cranes working together. These frames show the stages behind a build, alongside Lusail, one of Qatar's newest districts." },
-  Painting: { title: "Protection you can see", text: "Paint shields a building as much as it dresses it. From rope and platform access on tall facades to scaffold work around windows, this is what a painting contract looks like in practice." },
-  Manpower: { title: "The workforce behind the work", text: "Groundwork, masonry and paving crews, equipped for Qatar's conditions. Every site depends on people who arrive prepared, protected and ready to start." },
+  Construction: { title: "Where buildings take shape", text: "Cranes, concrete, steel and scaffolding working together. These frames follow a building from rising structure to the frame every other trade depends on." },
+  Painting: { title: "Protection you can see", text: "Paint shields a building as much as it dresses it. From rope access on tall facades to rolled coats indoors and out, this is what a painting contract looks like in practice." },
+  Manpower: { title: "The workforce behind the work", text: "Teams in protective gear, briefed and ready. Every site depends on people who arrive prepared, protected and ready to start." },
   Hospitality: { title: "Where service is the product", text: "A hotel entrance and a large events hall in Doha: environments where presentation, and the people behind it, shape what guests remember." },
 };
 
@@ -22,7 +21,6 @@ export function ProjectsSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const current = openIndex === null ? null : ORDERED[openIndex];
   const step = (d: number) => setOpenIndex((i) => (i === null ? i : (i + d + ORDERED.length) % ORDERED.length));
-  const hasIllustrative = GALLERY.some((g) => !g.isCompanyProject);
 
   return (
     <>
@@ -45,7 +43,7 @@ export function ProjectsSection() {
             <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
               <div className={cn("lg:col-span-4", ci % 2 === 1 && "lg:order-2")}>
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-dark">{String(ci + 1).padStart(2, "0")} · {cat}</p>
-                <h2 className="mt-4 text-balance text-3xl font-semibold leading-tight tracking-tight text-navy">{story.title}</h2>
+                <h2 className="mt-4 text-balance font-display text-4xl font-normal leading-[1.05] tracking-tight text-navy sm:text-5xl">{story.title}</h2>
                 <div className="mt-6 h-0.5 w-12 bg-gold" aria-hidden />
                 <p className="mt-6 leading-relaxed text-charcoal/75">{story.text}</p>
               </div>
@@ -61,16 +59,6 @@ export function ProjectsSection() {
           </Section>
         );
       })}
-
-      {hasIllustrative && (
-        <Section tone="paper" className="py-10 sm:py-10 lg:py-10">
-          <Container>
-            <p className="max-w-3xl text-sm leading-relaxed text-charcoal/60">
-              Photographs are illustrative images of Qatar and the construction industry and are not necessarily HM Farooq Constructing Company projects. <Link href="/credits" className="underline underline-offset-2 hover:text-navy">Image credits</Link>.
-            </p>
-          </Container>
-        </Section>
-      )}
 
       <Dialog.Root open={openIndex !== null} onOpenChange={(o) => !o && setOpenIndex(null)}>
         <Dialog.Portal>

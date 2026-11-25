@@ -7,7 +7,7 @@ export function WhyCompare() {
   return (
     <Section tone="paper">
       <Container>
-        <SectionHeading eyebrow="The Difference" title="Four suppliers, or one team?" description="Many jobs need more than one kind of work. Here is what changes when they come from one company." />
+        <SectionHeading eyebrow="The Difference" title="Four suppliers, or *one team?*" description="Many jobs need more than one kind of work. Here is what changes when they come from one company." />
         <div className="mt-14 grid gap-px bg-navy/15 lg:grid-cols-2">
           <div className="bg-white p-8 sm:p-10">
             <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-charcoal/50">Separate suppliers</h3>

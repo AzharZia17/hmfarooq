@@ -1,11 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, IBM_Plex_Sans_Arabic } from "next/font/google";
+import { Inter, Instrument_Serif, IBM_Plex_Sans_Arabic } from "next/font/google";
 import "./globals.css";
 import { I18nProvider } from "@/lib/i18n";
 import { SiteShell } from "@/components/layout/site-shell";
 import { COMPANY, SITE_URL } from "@/lib/constants";
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
+const display = Instrument_Serif({ variable: "--font-display", subsets: ["latin"], weight: "400", style: ["normal", "italic"], display: "swap" });
 const arabic = IBM_Plex_Sans_Arabic({ variable: "--font-arabic", subsets: ["arabic"], weight: ["400", "500", "700"], display: "swap", preload: false });
 
 const TITLE = "HM Farooq Constructing Company | Construction & Manpower Services Qatar";
@@ -49,7 +50,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" dir="ltr" className={`${inter.variable} ${arabic.variable} h-full antialiased`}>
+    <html lang="en" dir="ltr" className={`${inter.variable} ${display.variable} ${arabic.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
         <I18nProvider>

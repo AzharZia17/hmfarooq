@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function ProjectsPage() {
   return (
     <>
-      <PageHeader image={{ src: "/images/construction-site-team.jpg", alt: "" }} title="Our Work & Projects" description="The disciplines we work in, seen on site." crumbs={[{ label: "Projects" }]} />
+      <PageHeader image={{ src: "/images/construction-site-team.jpg", alt: "" }} title="Our *Work* & Projects" description="The disciplines we work in, seen on site." crumbs={[{ label: "Projects" }]} />
       <ProjectsSection />
       <CtaSection title="Have a similar job in mind?" text="Send us the details and we will tell you how we would approach it." />
     </>
