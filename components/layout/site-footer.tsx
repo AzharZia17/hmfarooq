@@ -1,9 +1,11 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { COMPANY, NAV_LINKS, telLink, whatsappLink } from "@/lib/constants";
 import { SERVICES } from "@/lib/services";
 import { Container } from "@/components/ui/container";
 import { Logo } from "@/components/layout/logo";
+import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import { CurrentYear } from "@/components/layout/current-year";
 
 const colTitle = "label mb-5 text-gold";
@@ -57,8 +59,23 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-6 border-t border-white/10 pt-6 text-xs text-white/50 lg:flex-row lg:items-center lg:justify-between">
           <p>© <CurrentYear /> {COMPANY.name}. All rights reserved.</p>
+
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <span className="label text-[0.65rem] text-white/40">Powered by</span>
+            <a href="https://www.9tsolutions.com/" target="_blank" rel="noopener noreferrer" className="group inline-flex min-h-10 items-center gap-2.5 transition-colors hover:text-ember">
+              <Image src="/logo-9t.png" alt="" width={480} height={382} sizes="40px" className="h-8 w-auto" />
+              <span className="text-sm font-medium text-white/85 group-hover:text-ember">9T Solutions<span className="sr-only"> (opens in a new tab)</span></span>
+            </a>
+            <span aria-hidden className="hidden h-4 w-px bg-white/15 sm:block" />
+            <a href="https://wa.me/923446831140" target="_blank" rel="noopener noreferrer" dir="ltr" className="inline-flex min-h-10 items-center gap-2 text-white/70 transition-colors hover:text-ember">
+              <WhatsAppIcon className="size-4 text-[#25D366]" />
+              <span>+92 344 6831140</span>
+              <span className="sr-only"> (chat on WhatsApp, opens in a new tab)</span>
+            </a>
+          </div>
+
           <div className="flex gap-x-6">
             <Link href="/privacy" className="inline-flex min-h-8 items-center hover:text-ember">Privacy policy</Link>
             <Link href="/terms" className="inline-flex min-h-8 items-center hover:text-ember">Terms &amp; conditions</Link>

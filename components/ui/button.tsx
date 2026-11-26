@@ -17,7 +17,7 @@ export const buttonVariants = cva(
         ink: "bg-ink text-white before:bg-ember hover:text-white",
         light: "border border-white/35 text-white before:bg-ember hover:border-ember",
         dark: "border border-ink/30 text-ink before:bg-ember hover:border-ember hover:text-white focus-visible:text-white",
-        whatsapp: "bg-navy-soft text-white before:bg-ember",
+        whatsapp: "bg-[#25D366] text-ink before:bg-ember hover:text-white focus-visible:text-white",
       },
       size: { default: "", sm: "min-h-10 px-4 text-xs", lg: "min-h-14 px-8 text-[0.95rem]" },
       full: { true: "w-full", false: "" },
