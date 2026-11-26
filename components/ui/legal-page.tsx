@@ -5,8 +5,8 @@ export function LegalPage({ title, crumb, children }: { title: string; crumb: st
   return (
     <>
       <PageHeader title={title} crumbs={[{ label: crumb }]} />
-      <Section tone="white">
-        <Container className="max-w-3xl space-y-5 leading-relaxed text-charcoal/85 [&_h2]:mt-8 [&_h2]:text-xl [&_h2]:font-semibold [&_h2]:text-navy">
+      <Section tone="paper" className="pt-8 sm:pt-12">
+        <Container className="max-w-3xl space-y-5 leading-relaxed text-ink/80 [&_h2]:display [&_h2]:mt-10 [&_h2]:text-2xl [&_h2]:text-ink">
           {children}
         </Container>
       </Section>

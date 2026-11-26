@@ -2,18 +2,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-// Logo is 1536x485 (≈3.17:1). shrink-0 + aspect-ratio keep it from being squeezed by flex layouts.
-export function Logo({ className, imgClassName }: { className?: string; imgClassName?: string }) {
+/**
+ * Transparent logo with two colourways: `dark` (navy lettering turned white) for use over dark
+ * grounds, `light` (original colours) for light grounds such as the scrolled header.
+ */
+export function Logo({ tone = "dark", className, imgClassName, priority }: { tone?: "dark" | "light"; className?: string; imgClassName?: string; priority?: boolean }) {
   return (
-    <Link href="/" aria-label="HM Farooq Constructing Company — home" className={cn("inline-flex shrink-0 items-center", className)}>
+    <Link href="/" aria-label="HM Farooq Constructing Company, home" className={cn("inline-flex shrink-0 items-center", className)}>
       <Image
-        src="/logo.jpeg"
+        src={tone === "dark" ? "/logo-dark.png" : "/logo-light.png"}
         alt="HM Farooq Constructing Company"
-        width={1536}
-        height={485}
-        priority
-        sizes="220px"
-        className={cn("aspect-[1536/485] h-12 w-auto max-w-none shrink-0 object-contain mix-blend-multiply sm:h-14", imgClassName)}
+        width={1394}
+        height={484}
+        priority={priority}
+        sizes="200px"
+        className={cn("aspect-[1394/484] h-11 w-auto max-w-none object-contain sm:h-12", imgClassName)}
       />
     </Link>
   );

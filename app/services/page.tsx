@@ -1,21 +1,26 @@
 import type { Metadata } from "next";
-import { IMAGES } from "@/lib/images";
 import { PageHeader } from "@/components/ui/page-header";
-import { ServicesDetail } from "@/components/sections/services-detail";
-import { CtaSection } from "@/components/sections/cta-section";
+import { ServicesListing } from "@/components/sections/services-listing";
+import { ContactBand } from "@/components/sections/contact-band";
 
 export const metadata: Metadata = {
   title: "Our Services",
-  description: "Manpower supply, building painting contracts, hospitality services and construction contracts in Qatar: what each service covers and who it suits.",
+  description: "Manpower and labor supply, construction and painting contracts, hospitality services, lifting, gypsum and ceiling work, AC, plumbing, and transportation in Qatar.",
   alternates: { canonical: "/services" },
 };
 
 export default function ServicesPage() {
   return (
     <>
-      <PageHeader image={IMAGES.cta} title="What we do, *in detail.*" description="Four services, each described by what it covers and who it is for." crumbs={[{ label: "Services" }]} />
-      <ServicesDetail />
-      <CtaSection title="Not sure which service fits?" text="Describe the job in a few lines and we will tell you how we would approach it." />
+      <PageHeader
+        title="Services, by what you need done."
+        description="Ten service lines in three groups. Combine them on one project and you still deal with a single team."
+        crumbs={[{ label: "Services" }]}
+        image={{ src: "/images/construction-steel-structure.jpg", alt: "Workers and an access platform inside a steel-frame building" }}
+        position="50% 40%"
+      />
+      <ServicesListing />
+      <ContactBand />
     </>
   );
 }

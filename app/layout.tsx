@@ -1,17 +1,17 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Instrument_Serif, IBM_Plex_Sans_Arabic } from "next/font/google";
+import { DM_Sans, DM_Mono, Manrope } from "next/font/google";
 import "./globals.css";
-import { I18nProvider } from "@/lib/i18n";
 import { SiteShell } from "@/components/layout/site-shell";
 import { COMPANY, SITE_URL } from "@/lib/constants";
+import { SERVICES } from "@/lib/services";
 
-const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
-const display = Instrument_Serif({ variable: "--font-display", subsets: ["latin"], weight: "400", style: ["normal", "italic"], display: "swap" });
-const arabic = IBM_Plex_Sans_Arabic({ variable: "--font-arabic", subsets: ["arabic"], weight: ["400", "500", "700"], display: "swap", preload: false });
+const body = DM_Sans({ variable: "--font-body", subsets: ["latin"], display: "swap" });
+const display = Manrope({ variable: "--font-display", subsets: ["latin"], weight: ["400", "500", "600"], display: "swap" });
+const label = DM_Mono({ variable: "--font-label", subsets: ["latin"], weight: ["400", "500"], display: "swap" });
 
 const TITLE = "HM Farooq Constructing Company | Construction & Manpower Services Qatar";
 const DESCRIPTION =
-  "HM Farooq Constructing Company provides manpower supply, building painting contracts, hospitality services, and construction contracting solutions in Qatar. Contact us today.";
+  "HM Farooq Constructing Company, Qatar: manpower and labor supply, construction and painting contracts, hospitality services, lifting, gypsum and ceiling work, AC, plumbing, transportation and logistics. License No. 222095.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   keywords: [
     "Construction Company in Qatar", "Manpower Supply Qatar", "Labor Supply Qatar", "Building Painting Contractors Qatar",
-    "Painting Contract Qatar", "Hospitality Services Qatar", "Construction Contractors Qatar", "HM Farooq Constructing Company",
+    "Painting Contract Qatar", "Hospitality Services Qatar", "Construction Contractors Qatar", "Lifting Equipment Qatar", "Gypsum Ceiling Qatar", "HM Farooq Constructing Company",
   ],
   alternates: { canonical: "/" },
   openGraph: {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-export const viewport: Viewport = { themeColor: "#14263D", width: "device-width", initialScale: 1 };
+export const viewport: Viewport = { themeColor: "#171310", width: "device-width", initialScale: 1 };
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -43,19 +43,17 @@ const jsonLd = {
   telephone: COMPANY.phones.map((p) => p.tel),
   areaServed: { "@type": "Country", name: "Qatar" },
   identifier: { "@type": "PropertyValue", name: "Business License No.", value: COMPANY.licenseNo },
-  makesOffer: ["Manpower Supply", "Building Painting Contracts", "Hospitality Services", "Construction Contracts"].map((n) => ({
+  makesOffer: SERVICES.map((x) => x.title).map((n) => ({
     "@type": "Offer", itemOffered: { "@type": "Service", name: n, areaServed: "Qatar" },
   })),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" dir="ltr" className={`${inter.variable} ${display.variable} ${arabic.variable} h-full antialiased`}>
+    <html lang="en" className={`${body.variable} ${display.variable} ${label.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
-        <I18nProvider>
-          <SiteShell>{children}</SiteShell>
-        </I18nProvider>
+        <SiteShell>{children}</SiteShell>
       </body>
     </html>
   );

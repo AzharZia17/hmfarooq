@@ -1,10 +1,16 @@
 import { z } from "zod";
 
 export const SERVICE_OPTIONS = [
-  "Manpower Supply",
-  "Building Painting",
-  "Hospitality Services",
+  "Manpower & Labor Supply",
   "Construction Contracts",
+  "Building Painting Contracts",
+  "Hospitality Services",
+  "Lifting Services, Equipment & Operators",
+  "Lifting Activities",
+  "Gypsum & Ceiling Work",
+  "AC Workers",
+  "Plumbing",
+  "Transportation & Logistics",
   "Other",
 ] as const;
 

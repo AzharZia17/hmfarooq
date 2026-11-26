@@ -1,60 +1,48 @@
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowDown, ArrowRight } from "lucide-react";
-import { Container } from "@/components/ui/container";
+import { ArrowRight, Phone } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
+import { Container } from "@/components/ui/container";
+import { HeroDrawing } from "@/components/sections/hero-drawing";
 import { COMPANY, telLink } from "@/lib/constants";
-import { IMAGES } from "@/lib/images";
 
+const d = (s: number) => ({ "--d": `${s}s` }) as React.CSSProperties;
+
+/** No photograph: the hero is a construction elevation that draws itself on the dark sheet. */
 export function Hero() {
   return (
-    <section className="relative isolate flex min-h-[calc(100svh-7.5rem)] flex-col justify-end overflow-hidden bg-navy-deep text-white">
-      <Image src={IMAGES.hero.src} alt={IMAGES.hero.alt} fill priority sizes="100vw" className="-z-20 object-cover" />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy-deep/95 via-navy-deep/70 to-navy-deep/20" />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-navy-deep via-transparent to-navy-deep/30" />
+    <section aria-labelledby="hero-title" className="relative isolate flex min-h-[100svh] flex-col overflow-hidden bg-ink text-white">
+      <div aria-hidden className="absolute inset-0 -z-20 bg-[linear-gradient(to_right,rgb(255_255_255/0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgb(255_255_255/0.04)_1px,transparent_1px)] bg-[size:80px_80px]" />
+      <div aria-hidden className="absolute inset-0 -z-10 bg-[radial-gradient(70%_60%_at_80%_70%,rgb(186_152_116/0.12),transparent_70%)]" />
 
-      <Container className="pt-24 pb-14 sm:pt-32 sm:pb-20 lg:pb-24">
-        <p className="rise mb-7 flex items-center gap-4 text-xs font-semibold uppercase tracking-[0.24em] text-gold">
-          <span className="h-px w-10 bg-gold" aria-hidden />
-          Trusted Contracting &amp; Service Solutions in Qatar
+      <Container className="relative z-10 flex flex-1 flex-col justify-center pb-10 pt-32 lg:pb-52">
+        <p className="fade-in label mb-7 flex items-center gap-3 text-gold" style={d(0.4)}>
+          <span aria-hidden className="h-px w-8 bg-gold" />Sheet 01 · Qatar · Licence No. {COMPANY.licenseNo}
         </p>
-        <h1 className="rise rise-2 max-w-5xl text-balance font-display text-[3.1rem] font-normal leading-[1] tracking-tight sm:text-7xl lg:text-[6.5rem]">
-          Building <em className="italic text-gold">Excellence.</em>
-          <span className="block">Delivering Reliable Solutions.</span>
+        <h1 id="hero-title" className="display text-[clamp(2.9rem,7.6vw,7rem)] leading-[0.96]">
+          <span className="mask-line" style={d(0.3)}><span>Building a</span></span>
+          <span className="mask-line" style={d(0.45)}><span>Better <span className="text-gold">Tomorrow<span className="text-ember">.</span></span></span></span>
         </h1>
-        <p className="rise rise-3 mt-8 max-w-xl text-pretty text-lg leading-relaxed text-white/85 sm:text-xl">
-          Professional manpower supply, building painting, hospitality, and construction contracting services in Qatar.
+        <p className="fade-up prose-lead mt-8 max-w-md text-white/75" style={d(0.9)}>
+          Reliable construction, manpower and specialist trade services supporting projects and properties across Qatar.
         </p>
-        <div className="rise rise-4 mt-10 flex flex-col gap-3 sm:flex-row">
-          <Link href="/services" className={buttonVariants({ variant: "gold", size: "lg" })}>
-            Explore Our Services <ArrowRight className="flip-rtl" aria-hidden />
-          </Link>
-          <Link href="/contact" className={buttonVariants({ variant: "outline", size: "lg" })}>Contact Us</Link>
+        <div className="fade-up mt-9 flex flex-col gap-3 sm:flex-row" style={d(1.05)}>
+          <Link href="/contact" className={buttonVariants({ variant: "ember", size: "lg" })}>Request a quote <ArrowRight className="nudge" aria-hidden /></Link>
+          <Link href="/services" className={buttonVariants({ variant: "light", size: "lg" })}>Explore services</Link>
         </div>
       </Container>
 
-      {/* Credential strip */}
-      <div className="border-t border-white/20 bg-navy-deep/80 backdrop-blur-sm">
-        <Container className="grid items-stretch sm:grid-cols-[1.4fr_1fr_1fr_auto] sm:divide-x sm:divide-white/15 rtl:sm:divide-x-reverse">
-          <div className="py-5 sm:pe-8">
-            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-white/60">Company</p>
-            <p className="mt-1 text-sm font-semibold tracking-[0.1em]">{COMPANY.name}</p>
-          </div>
-          <div className="border-t border-white/15 py-5 sm:border-t-0 sm:px-8">
-            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-white/60">License No.</p>
-            <p className="mt-0.5 font-display text-4xl leading-none text-gold">{COMPANY.licenseNo}</p>
-          </div>
-          <div className="hidden py-5 sm:block sm:px-8" dir="ltr">
-            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-white/60">Call us</p>
+      <div className="pointer-events-none relative h-64 sm:h-80 lg:absolute lg:inset-x-0 lg:bottom-14 lg:h-[min(68svh,640px)]">
+        <HeroDrawing className="h-full w-full" />
+      </div>
+
+      <div className="relative z-10 border-t border-gold/40">
+        <Container className="flex flex-col gap-2 py-4 sm:flex-row sm:items-center sm:justify-between">
+          <p className="label text-white/70">{COMPANY.shortName}</p>
+          <p className="flex flex-wrap gap-x-6 sm:pe-16" dir="ltr">
             {COMPANY.phones.map((p) => (
-              <a key={p.tel} href={telLink(p.tel)} className="block text-sm font-semibold leading-relaxed transition-colors hover:text-gold">{p.display}</a>
+              <a key={p.tel} href={telLink(p.tel)} className="label inline-flex min-h-10 items-center gap-2 text-white/80 transition-colors hover:text-ember"><Phone className="size-3.5" aria-hidden />{p.display}</a>
             ))}
-          </div>
-          <a href="#services" aria-label="Scroll to services" className="group hidden items-center justify-center ps-8 sm:flex">
-            <span className="grid size-12 place-items-center rounded-full border border-white/40 transition-colors group-hover:border-gold group-hover:text-gold">
-              <ArrowDown className="size-5 transition-transform group-hover:translate-y-0.5" aria-hidden />
-            </span>
-          </a>
+          </p>
         </Container>
       </div>
     </section>

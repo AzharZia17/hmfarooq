@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/ui/page-header";
-import { ProjectsSection } from "@/components/sections/projects-section";
-import { CtaSection } from "@/components/sections/cta-section";
+import { Gallery } from "@/components/sections/gallery";
+import { ContactBand } from "@/components/sections/contact-band";
 
 export const metadata: Metadata = {
   title: "Our Work & Projects",
@@ -12,9 +12,15 @@ export const metadata: Metadata = {
 export default function ProjectsPage() {
   return (
     <>
-      <PageHeader image={{ src: "/images/construction-site-team.jpg", alt: "" }} title="Our *Work* & Projects" description="The disciplines we work in, seen on site." crumbs={[{ label: "Projects" }]} />
-      <ProjectsSection />
-      <CtaSection title="Have a similar job in mind?" text="Send us the details and we will tell you how we would approach it." />
+      <PageHeader
+        title="Our work in pictures."
+        description="The disciplines we work in, seen on site."
+        crumbs={[{ label: "Projects" }]}
+        image={{ src: "/images/project-crane-site.jpg", alt: "Building under construction with a tower crane" }}
+        position="50% 30%"
+      />
+      <Gallery />
+      <ContactBand title="Have a similar job in mind?" text="Send us the details and we will tell you how we would approach it." />
     </>
   );
 }

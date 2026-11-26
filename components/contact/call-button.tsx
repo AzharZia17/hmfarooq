@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 export function CallButton({
   index = 0,
   label,
-  variant = "outline",
+  variant = "light",
   size,
   full,
   className,
