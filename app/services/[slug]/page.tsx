@@ -95,6 +95,7 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
                 </div>
               ))}
             </div>
+            <p className="label mt-4 text-slate"><Link href="/credits" className="underline underline-offset-4 hover:text-ember">Image credits</Link></p>
           </Container>
         </Section>
       )}

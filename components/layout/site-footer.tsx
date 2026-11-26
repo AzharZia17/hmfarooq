@@ -35,6 +35,7 @@ export function SiteFooter() {
             <h2 className={colTitle}>Company</h2>
             <ul>
               {NAV_LINKS.map((l) => <li key={l.key}><Link href={l.href} className={link}>{l.label}</Link></li>)}
+              <li><Link href="/credits" className={link}>Image credits</Link></li>
             </ul>
           </nav>
 

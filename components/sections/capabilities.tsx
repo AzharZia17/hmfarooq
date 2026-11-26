@@ -56,6 +56,7 @@ export function Capabilities() {
             </article>
           ))}
         </div>
+        <p className="label mt-20 lg:mt-28 text-slate"><Link href="/credits" className="underline underline-offset-4 hover:text-ember">Image credits</Link></p>
       </Container>
     </Section>
   );

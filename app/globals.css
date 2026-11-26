@@ -98,8 +98,10 @@ body {
 .draw { stroke-dasharray: 1; stroke-dashoffset: 0; }
 .sway { transform-box: view-box; }
 .lit { opacity: 0; }
+.accent-in { opacity: 1; }
 @media (prefers-reduced-motion: no-preference) {
   .draw { stroke-dashoffset: 1; animation: draw 2.6s var(--ease-out-expo) forwards; animation-delay: var(--d, 0s); }
+  .accent-in { opacity: 0; animation: fade-in 1.2s ease 3.4s forwards; }
   .lit { animation: light-up 7s ease-in-out infinite; animation-delay: var(--d, 3s); }
   .sway { animation: sway 6s ease-in-out infinite alternate; }
 }
