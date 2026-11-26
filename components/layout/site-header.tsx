@@ -38,11 +38,11 @@ export function SiteHeader() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow,color] duration-500",
-        scrolled ? "bg-paper/95 text-ink shadow-[0_1px_0_var(--color-line)] backdrop-blur" : "bg-transparent text-white",
+        scrolled ? "bg-ink/95 text-white shadow-[0_1px_0_rgb(255_255_255/0.08)] backdrop-blur" : "bg-transparent text-white",
       )}
     >
       <div className="mx-auto flex h-[var(--header-h)] max-w-[1320px] items-stretch justify-between px-5 sm:px-8 lg:px-12">
-        <div className="flex items-start"><Logo priority tone={scrolled ? "light" : "dark"} className="self-center" /></div>
+        <div className="flex items-start"><Logo priority tone="dark" className="self-center" /></div>
 
         <nav aria-label="Primary" className={"hidden items-center lg:flex"}>
           <ul className="flex items-center gap-1">

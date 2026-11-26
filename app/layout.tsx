@@ -6,8 +6,8 @@ import { COMPANY, SITE_URL } from "@/lib/constants";
 import { SERVICES } from "@/lib/services";
 
 const body = DM_Sans({ variable: "--font-body", subsets: ["latin"], display: "swap" });
-const display = Manrope({ variable: "--font-display", subsets: ["latin"], weight: ["400", "500", "600"], display: "swap" });
-const label = DM_Mono({ variable: "--font-label", subsets: ["latin"], weight: ["400", "500"], display: "swap" });
+const display = Manrope({ variable: "--font-display", subsets: ["latin"], weight: ["500"], display: "swap" });
+const label = DM_Mono({ variable: "--font-label", subsets: ["latin"], weight: ["500"], display: "swap" });
 
 const TITLE = "HM Farooq Constructing Company | Construction & Manpower Services Qatar";
 const DESCRIPTION =

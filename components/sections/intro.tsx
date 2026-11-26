@@ -35,7 +35,7 @@ export function Intro() {
 
           <div className="relative lg:col-span-5">
             <div className="reveal-clip relative aspect-[4/5] overflow-hidden bg-line">
-              <Image src="/images/workers-masonry.jpg" alt="Workers in safety helmets and high-visibility vests handling materials on a site in Qatar" fill sizes="(min-width:1024px) 38vw, 100vw" className="parallax object-cover object-[32%_50%]" />
+              <Image src="/images/stadium-workers.jpg" alt="Workers in safety vests carrying a beam across a large stadium construction site" fill sizes="(min-width:1024px) 38vw, 100vw" className="parallax object-cover object-[48%_50%]" />
             </div>
             <figure className="reveal absolute -bottom-8 -start-4 hidden w-40 border-[6px] border-paper bg-paper sm:block lg:-start-14 lg:w-52">
               <div className="relative aspect-square overflow-hidden">

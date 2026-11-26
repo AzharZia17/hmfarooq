@@ -16,7 +16,7 @@ const CHAPTERS = [
     n: "B", title: "Finishing and building services", href: "/services/painting", cta: "Building painting",
     text: "The surfaces and systems people actually live and work with: painting inside and out, gypsum and ceilings, air conditioning and plumbing, each prepared properly before the finish goes on.",
     items: ["Building painting", "Gypsum and ceiling work", "AC workers and plumbing"],
-    img: { src: "/images/painting-facade-rope.jpg", alt: "Painters working down a hotel facade on ropes" }, pos: "50% 40%",
+    img: { src: "/images/painters-rope-facade.jpg", alt: "A rope-access painter working down a glazed building facade" }, pos: "50% 40%",
   },
   {
     n: "C", title: "People and movement", href: "/services/manpower", cta: "Manpower and labor supply",

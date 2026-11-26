@@ -19,6 +19,8 @@ export type ExplorerService = {
  */
 export function ServicesExplorer({ services }: { services: ExplorerService[] }) {
   const [active, setActive] = useState(0);
+  const [seen, setSeen] = useState<number[]>([0]);
+  const show = (i: number) => { setActive(i); setSeen((p) => (p.includes(i) ? p : [...p, i])); };
   const current = services[active];
 
   return (
@@ -38,8 +40,8 @@ export function ServicesExplorer({ services }: { services: ExplorerService[] }) 
               <li key={s.slug} className="border-t border-white/15 last:border-b">
                 <Link
                   href={`/services/${s.slug}`}
-                  onMouseEnter={() => setActive(i)}
-                  onFocus={() => setActive(i)}
+                  onMouseEnter={() => show(i)}
+                  onFocus={() => show(i)}
                   className="group flex min-h-[5.25rem] items-center gap-4 py-4 sm:gap-8 sm:py-6"
                 >
                   <span className={cn("label w-8 shrink-0 transition-colors duration-500", i === active ? "text-gold" : "text-white/40")}>{s.number}</span>
@@ -64,7 +66,7 @@ export function ServicesExplorer({ services }: { services: ExplorerService[] }) 
                 {services.map((s, i) => (
                   <div key={s.slug} className={cn("absolute inset-0 transition-opacity duration-700", i === active ? "opacity-100" : "opacity-0")} aria-hidden={i !== active}>
                     {s.image ? (
-                      <Image src={s.image.src} alt={i === active ? s.image.alt : ""} fill sizes="(min-width:1024px) 40vw, 0px" className={cn("object-cover transition-transform duration-[1600ms] ease-[var(--ease-out-expo)]", i === active ? "scale-100" : "scale-110")} />
+                      seen.includes(i) && <Image src={s.image.src} alt={i === active ? s.image.alt : ""} fill sizes="(min-width:1024px) 40vw, 0px" className={cn("object-cover transition-transform duration-[1600ms] ease-[var(--ease-out-expo)]", i === active ? "scale-100" : "scale-110")} />
                     ) : (
                       <div className="flex h-full flex-col justify-between bg-[repeating-linear-gradient(135deg,transparent_0_22px,rgb(255_255_255/0.035)_22px_23px)] p-8">
                         <span className="display text-[9rem] leading-none text-gold/25">{s.number}</span>
