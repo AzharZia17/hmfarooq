@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   openGraph: {
     type: "website", locale: "en_QA", siteName: COMPANY.shortName, title: TITLE, description: DESCRIPTION, url: "/",
-    images: [{ url: "/logo.jpeg", width: 1536, height: 485, alt: "HM Farooq Constructing Company logo" }],
+    images: [{ url: "/logo.jpeg", width: 1536, height: 617, alt: "HM Farooq Constructing Company logo" }],
   },
   twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION, images: ["/logo.jpeg"] },
   robots: { index: true, follow: true },
@@ -51,7 +51,7 @@ const jsonLd = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${body.variable} ${display.variable} ${label.variable} h-full antialiased`}>
-      <body className="flex min-h-full flex-col">
+      <body suppressHydrationWarning className="flex min-h-full flex-col">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
         <SiteShell>{children}</SiteShell>
       </body>

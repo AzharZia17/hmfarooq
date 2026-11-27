@@ -22,7 +22,7 @@ export function HeroCard({ items, className }: { items: HeroCardItem[]; classNam
   const cur = items[i];
   const Icon = ICONS[i % ICONS.length];
   return (
-    <aside aria-label="Featured services" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} className={cn("bg-tint p-4 text-ink shadow-2xl shadow-black/30 sm:p-5", className)}>
+    <aside aria-label="Featured services" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} className={cn("bg-tint p-4 text-ink shadow-2xl shadow-black/30 ring-1 ring-ink/10 sm:p-5", className)}>
       <div className="flex items-start justify-between gap-4">
         <p className="label text-slate">Service 0{i + 1} / 0{items.length}</p>
         <div className="flex gap-1.5" role="group" aria-label="Choose service">

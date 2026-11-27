@@ -34,7 +34,7 @@ export function Gallery() {
 
         <div className="gap-x-6 sm:columns-2 lg:columns-3">
           {items.map((g, i) => (
-            <figure key={g.id} className="mb-10 break-inside-avoid">
+            <figure key={g.id} className="reveal-scale mb-10 break-inside-avoid">
               <button type="button" onClick={() => setOpenId(g.id)} aria-label={`View larger: ${g.title}`} className={cn("group relative block w-full overflow-hidden bg-line", RATIOS[i % RATIOS.length])}>
                 <Image src={g.src} alt={g.alt} fill sizes="(min-width:1024px) 30vw, (min-width:640px) 45vw, 100vw" className="zoom object-cover" />
                 <span aria-hidden className="label absolute bottom-0 start-0 bg-ink px-3 py-2 text-white opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-focus-visible:opacity-100">{g.category}</span>

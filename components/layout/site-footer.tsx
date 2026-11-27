@@ -13,7 +13,7 @@ const link = "inline-flex min-h-10 items-center text-sm text-white/70 transition
 
 export function SiteFooter() {
   return (
-    <footer className="bg-ink text-white">
+    <footer className="diag bg-ink text-white">
       <Container className="pb-10 pt-20 sm:pt-28">
         <div className="grid gap-10 border-b border-white/10 pb-16 lg:grid-cols-12 lg:items-end">
           <p className="display text-[clamp(2.2rem,5.6vw,4.75rem)] lg:col-span-8">
@@ -26,9 +26,9 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.6fr_1.5fr_1fr] lg:gap-10">
+        <div className="stagger grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.6fr_1.5fr_1fr] lg:gap-10">
           <div>
-            <Logo tone="dark" imgClassName="h-14" />
+            <Logo tone="dark" imgClassName="h-20 sm:h-20" />
             <p className="mt-6 text-sm font-semibold tracking-wide">{COMPANY.name}</p>
             <p className="mt-2 max-w-xs text-sm leading-relaxed text-white/60">{COMPANY.tagline}</p>
           </div>

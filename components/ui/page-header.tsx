@@ -41,7 +41,7 @@ export function PageHeader({
           </div>
         </div>
       )}
-      <div aria-hidden className="h-12 bg-gradient-to-b from-ink to-ink lg:h-16" />
+      <div aria-hidden className="h-[var(--cut)]" />
     </header>
   );
 }

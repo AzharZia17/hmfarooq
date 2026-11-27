@@ -20,12 +20,19 @@ export function SiteHeader() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
     let raf = 0;
+    let last = window.scrollY;
     const onScroll = () => {
       cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(() => setScrolled(window.scrollY > 40));
+      raf = requestAnimationFrame(() => {
+        const y = window.scrollY;
+        setScrolled(y > 40);
+        // phones: slide away while scrolling down, return on any upward scroll
+        if (Math.abs(y - last) > 6) { setHidden(y > 220 && y > last); last = y; }
+      });
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -37,7 +44,8 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow,color] duration-500",
+        "fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow,color,transform] duration-500 ease-[var(--ease-out-expo)]",
+        hidden && !open && "max-lg:-translate-y-full motion-reduce:max-lg:translate-y-0",
         scrolled ? "bg-ink/95 text-white shadow-[0_1px_0_rgb(255_255_255/0.08)] backdrop-blur" : "bg-transparent text-white",
       )}
     >

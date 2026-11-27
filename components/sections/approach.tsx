@@ -31,9 +31,9 @@ export function Approach() {
 
         <div className="mt-24 border-t border-ink/15 pt-12 lg:mt-32">
           <p className="label reveal text-gold-deep">What you can expect</p>
-          <dl className="mt-8 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+          <dl className="no-scrollbar -mx-5 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-x-10 sm:gap-y-10 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-4">
             {COMMITMENTS.map((c, i) => (
-              <div key={c.title} className="reveal">
+              <div key={c.title} className="reveal max-sm:min-w-[80%] max-sm:snap-start max-sm:border max-sm:border-ink/15 max-sm:bg-tint max-sm:p-5">
                 <dt className="flex items-baseline gap-3">
                   <span className="label text-slate">{String(i + 1).padStart(2, "0")}</span>
                   <span className="display text-xl">{c.title}</span>

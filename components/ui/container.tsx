@@ -14,5 +14,5 @@ const tones: Record<Tone, string> = {
 
 /** One vertical rhythm for the whole site: 80 / 112 / 144 px. */
 export function Section({ className, tone = "paper", ...props }: React.ComponentProps<"section"> & { tone?: Tone }) {
-  return <section className={cn("relative py-20 sm:py-28 lg:py-36", tones[tone], className)} {...props} />;
+  return <section className={cn("diag relative py-20 sm:py-28 lg:py-36", tones[tone], className)} {...props} />;
 }

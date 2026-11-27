@@ -15,7 +15,7 @@ const FACTS = [
 /** Typography-led introduction. Image composition is deliberately the opposite of the hero: tall, offset, quiet. */
 export function Intro() {
   return (
-    <Section tone="paper">
+    <Section tone="white">
       <Container>
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
@@ -46,7 +46,7 @@ export function Intro() {
           </div>
         </div>
 
-        <dl className="reveal mt-20 grid border-y border-ink/15 sm:grid-cols-3 lg:mt-28">
+        <dl className="stagger mt-20 grid border-y border-ink/15 sm:grid-cols-3 lg:mt-28">
           {FACTS.map((f, i) => (
             <div key={f.k} className={`py-7 sm:px-8 ${i > 0 ? "border-t border-ink/15 sm:border-s sm:border-t-0" : "sm:ps-0"}`}>
               <dt className="label text-gold-deep">{f.k}</dt>

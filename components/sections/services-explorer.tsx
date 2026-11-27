@@ -37,7 +37,7 @@ export function ServicesExplorer({ services }: { services: ExplorerService[] }) 
         <div className="mt-14 grid gap-12 lg:mt-20 lg:grid-cols-12 lg:gap-16">
           <ol className="lg:col-span-7">
             {services.map((s, i) => (
-              <li key={s.slug} className="border-t border-white/15 last:border-b">
+              <li key={s.slug} className="reveal-x border-t border-white/15 last:border-b">
                 <Link
                   href={`/services/${s.slug}`}
                   onMouseEnter={() => show(i)}

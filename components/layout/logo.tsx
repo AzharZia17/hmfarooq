@@ -10,13 +10,13 @@ export function Logo({ tone = "dark", className, imgClassName, priority }: { ton
   return (
     <Link href="/" aria-label="HM Farooq Constructing Company, home" className={cn("inline-flex shrink-0 items-center", className)}>
       <Image
-        src={tone === "dark" ? "/logo-dark.png" : "/logo-light.png"}
+        src={tone === "dark" ? "/logo-hm-dark.png" : "/logo-hm-light.png"}
         alt="HM Farooq Constructing Company"
-        width={1394}
-        height={484}
+        width={700}
+        height={305}
         priority={priority}
         sizes="200px"
-        className={cn("aspect-[1394/484] h-11 w-auto max-w-none object-contain sm:h-12", imgClassName)}
+        className={cn("aspect-[700/305] h-12 w-auto max-w-none object-contain sm:h-14", imgClassName)}
       />
     </Link>
   );

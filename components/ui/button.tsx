@@ -14,6 +14,7 @@ export const buttonVariants = cva(
       variant: {
         gold: "bg-gold text-ink before:bg-ember hover:text-white focus-visible:text-white",
         ember: "bg-ember text-white before:hidden hover:bg-[#a84a1d] focus-visible:bg-[#a84a1d]",
+        cream: "bg-tint text-ink before:bg-ink hover:text-white focus-visible:text-white",
         ink: "bg-ink text-white before:bg-ember hover:text-white",
         light: "border border-white/35 text-white before:bg-ember hover:border-ember",
         dark: "border border-ink/30 text-ink before:bg-ember hover:border-ember hover:text-white focus-visible:text-white",

@@ -5,7 +5,7 @@ import { Eyebrow } from "@/components/ui/eyebrow";
 /** Second photographic moment: Lusail at full width, with the Qatar statement set on a dark plate. */
 export function QatarContext() {
   return (
-    <section className="relative isolate overflow-hidden bg-ink text-white" aria-labelledby="qatar-title">
+    <section className="diag relative isolate overflow-hidden bg-ink text-white" aria-labelledby="qatar-title">
       <div className="absolute inset-0 -z-20">
         <Image src="/images/lusail-city.jpg" alt="Modern towers in Lusail City, Qatar" fill sizes="100vw" className="parallax object-cover object-[50%_40%]" />
       </div>

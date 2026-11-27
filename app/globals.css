@@ -28,6 +28,7 @@
 
 :root {
   --header-h: 4.5rem;
+  --cut: clamp(2.25rem, 5.5vw, 4.5rem); /* height of every diagonal section cut */
 }
 
 html {
@@ -47,6 +48,23 @@ body {
 
 ::selection { background: var(--color-gold); color: var(--color-ink); }
 :focus-visible { outline: 2px solid var(--color-gold); outline-offset: 3px; }
+
+ /* ── Diagonal section cuts ───────────────────
+   Each section overlaps the previous one by --cut and is clipped on an angle, so two colours meet on a diagonal.
+   The transparent top border keeps the content exactly where it was; odd and even sections tilt opposite ways. */
+.diag {
+  margin-top: calc(var(--cut) * -1);
+  border-top: var(--cut) solid transparent;
+  clip-path: polygon(0 var(--cut), 100% 0, 100% 100%, 0 100%);
+}
+.diag:nth-of-type(even) { clip-path: polygon(0 0, 100% var(--cut), 100% 100%, 0 100%); }
+/* the orange edge that runs along each diagonal */
+.diag::before {
+  content: ""; position: absolute; left: 0; right: 0; top: calc(var(--cut) * -1);
+  height: calc(var(--cut) + 0.6rem); background: var(--color-ember); pointer-events: none;
+  clip-path: polygon(0 var(--cut), 100% 0, 100% 0.6rem, 0 calc(var(--cut) + 0.6rem));
+}
+.diag:nth-of-type(even)::before { clip-path: polygon(0 0, 100% var(--cut), 100% calc(var(--cut) + 0.6rem), 0 0.6rem); }
 
 /* ── Type ───────────────────────────────────── */
 .display {
@@ -129,6 +147,26 @@ body {
     @keyframes line-grow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
     @keyframes hero-drift { from { transform: translateY(0) scale(1); } to { transform: translateY(12%) scale(1.06); } }
 
+    @keyframes reveal-x { from { opacity: 0; transform: translateX(-36px); } to { opacity: 1; transform: none; } }
+    @keyframes reveal-scale { from { opacity: 0; transform: scale(0.92) translateY(18px); } to { opacity: 1; transform: none; } }
+    @keyframes hero-fade { from { opacity: 1; transform: none; } to { opacity: 0; transform: translateY(-48px); } }
+    @keyframes hero-art { from { transform: translateY(0) scale(1); } to { transform: translateY(70px) scale(1.12); } }
+    @keyframes foot-rise { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: none; } }
+
+    .reveal-x { animation: reveal-x linear both; animation-timeline: view(); animation-range: entry 0% entry 55%; }
+    .reveal-scale { animation: reveal-scale linear both; animation-timeline: view(); animation-range: entry 0% entry 60%; }
+    /* children rise one after another */
+    .stagger > * { animation: reveal linear both; animation-timeline: view(); animation-range: entry 0% entry 55%; }
+    .stagger > :nth-child(2) { animation-range: entry 8% entry 63%; }
+    .stagger > :nth-child(3) { animation-range: entry 16% entry 71%; }
+    .stagger > :nth-child(4) { animation-range: entry 24% entry 79%; }
+    .stagger > :nth-child(5) { animation-range: entry 32% entry 87%; }
+    .stagger > :nth-child(6) { animation-range: entry 40% entry 95%; }
+    /* phones: the hero copy fades away and the building drifts slower than the page */
+    @media (max-width: 1023px) {
+      .m-hero-fade { animation: hero-fade linear both; animation-timeline: scroll(root); animation-range: 0 55vh; }
+      .m-hero-art { animation: hero-art linear both; animation-timeline: scroll(root); animation-range: 0 90vh; }
+    }
     .reveal { animation: reveal linear both; animation-timeline: view(); animation-range: entry 0% entry 55%; }
     .reveal-clip { animation: reveal-clip linear both; animation-timeline: view(); animation-range: entry 0% entry 60%; }
     .parallax { animation: parallax linear both; animation-timeline: view(); }

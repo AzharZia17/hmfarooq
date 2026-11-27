@@ -63,7 +63,7 @@ export function HeroBuilding({ className }: { className?: string }) {
               <path className="draw" pathLength={1} style={st(d + 0.1)} fill="#171310" d={f.right} />
               <path className="draw" pathLength={1} style={st(d + 0.2)} fill="#171310" d={f.top} />
               {f.lines && <path className="draw" pathLength={1} style={st(d + 0.4)} opacity="0.6" d={f.lines} />}
-              {b.accent && <path className="accent-in" fill="var(--color-ember)" stroke="currentColor" d={f.front} />}
+              {b.accent && <path className="accent-in" fill="var(--color-tint)" stroke="currentColor" d={f.front} />}
             </g>
           );
         })}
