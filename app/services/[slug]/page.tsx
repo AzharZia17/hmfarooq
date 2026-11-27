@@ -12,6 +12,9 @@ import { CallButton } from "@/components/contact/call-button";
 import { ContactForm } from "@/components/contact/contact-form";
 import { COMPANY } from "@/lib/constants";
 
+// All ten slugs are known up front and prerendered; opt out of the dev-time instant-shell check for `params`.
+export const instant = false;
+
 export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
 }

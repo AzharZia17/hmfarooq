@@ -15,7 +15,7 @@ const FACTS = [
 /** Typography-led introduction. Image composition is deliberately the opposite of the hero: tall, offset, quiet. */
 export function Intro() {
   return (
-    <Section tone="white">
+    <Section tone="white" id="company">
       <Container>
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
@@ -34,7 +34,7 @@ export function Intro() {
           </div>
 
           <div className="relative lg:col-span-5">
-            <div className="reveal-clip relative aspect-[4/5] overflow-hidden bg-line">
+            <div className="reveal-clip-x relative aspect-[4/5] overflow-hidden bg-line">
               <Image src="/images/stadium-workers.jpg" alt="Workers in safety vests carrying a beam across a large stadium construction site" fill sizes="(min-width:1024px) 38vw, 100vw" className="parallax object-cover object-[48%_50%]" />
             </div>
             <figure className="reveal absolute -bottom-8 -start-4 hidden w-40 border-[6px] border-paper bg-paper sm:block lg:-start-14 lg:w-52">

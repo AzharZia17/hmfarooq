@@ -32,7 +32,7 @@ export function ServicesListing() {
                       <p className="label text-gold-deep">{s.number}</p>
                       <h3 className="display mt-3 text-[clamp(1.7rem,3vw,2.5rem)]"><Link href={`/services/${s.slug}`} className="hover:text-ember">{s.title}</Link></h3>
                       <p className="mt-4 leading-relaxed text-slate">{s.description}</p>
-                      <ul className="mt-6 border-t border-ink/15 text-sm">
+                      <ul className="stagger mt-6 border-t border-ink/15 text-sm">
                         {s.offerings.slice(0, 4).map((o) => <li key={o.name} className="border-b border-ink/10 py-2.5">{o.name}</li>)}
                       </ul>
                       <Link href={`/services/${s.slug}`} className="mt-6 inline-flex min-h-11 items-center gap-2 text-sm font-semibold">

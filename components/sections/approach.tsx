@@ -5,7 +5,7 @@ import { COMMITMENTS, PROCESS_STEPS } from "@/lib/constants";
 /** Sticky heading beside a vertical timeline that draws itself on scroll, then four plain commitments. */
 export function Approach() {
   return (
-    <Section tone="paper">
+    <Section tone="paper" id="approach">
       <Container>
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-20">
           <div className="lg:col-span-5">

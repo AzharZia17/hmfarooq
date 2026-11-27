@@ -153,6 +153,30 @@ body {
     @keyframes hero-art { from { transform: translateY(0) scale(1); } to { transform: translateY(70px) scale(1.12); } }
     @keyframes foot-rise { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: none; } }
 
+    @keyframes parallax-x { from { transform: translateX(-7%) scale(1.16); } to { transform: translateX(7%) scale(1.16); } }
+    @keyframes clip-x { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0); } }
+    @keyframes story-copy { 0% { opacity: 0; transform: translateY(34px); } 22%, 78% { opacity: 1; transform: none; } 100% { opacity: 0; transform: translateY(-34px); } }
+    @keyframes story-zoom { from { transform: scale(1); } to { transform: scale(1.22); } }
+    @keyframes story-dim { from { opacity: 0.55; } to { opacity: 0.9; } }
+    .parallax-x { animation: parallax-x linear both; animation-timeline: view(); }
+    .reveal-clip-x { animation: clip-x linear both; animation-timeline: view(); animation-range: entry 0% entry 65%; }
+
+    /* pinned storytelling: the section is tall, its content sticks, and copy swaps as you scroll (works both ways) */
+    .story { height: 250svh; padding: 0; view-timeline: --story block; }
+    .story-pin { position: sticky; top: 0; height: 100svh; display: flex; align-items: center; padding-block: 0; }
+    .story-copy { position: relative; min-height: 15rem; }
+    .story-a, .story-b { position: absolute; inset: 0 auto auto 0; max-width: 36rem; animation: story-copy linear both; animation-timeline: --story; }
+    .story-a { animation-range: cover 30% cover 52%; }
+    .story-b { animation-range: cover 48% cover 70%; }
+    .story-bg { animation: story-zoom linear both; animation-timeline: --story; animation-range: cover 18% cover 82%; }
+    .story-shade { animation: story-dim linear both; animation-timeline: --story; animation-range: cover 25% cover 60%; }
+
+    /* services rows: each one slides in as it reaches the lower half of the screen, and out again when you scroll back up */
+    @keyframes row-in { from { opacity: 0; transform: translateX(-64px) scale(0.97); } to { opacity: 1; transform: none; } }
+    @keyframes thumb-in { from { opacity: 0; transform: scale(0.6) rotate(-4deg); } to { opacity: 1; transform: none; } }
+    .row-in { animation: row-in linear both; animation-timeline: view(); animation-range: entry 15% cover 36%; }
+    .row-in .row-thumb { animation: thumb-in linear both; animation-timeline: view(); animation-range: entry 35% cover 42%; }
+
     .reveal-x { animation: reveal-x linear both; animation-timeline: view(); animation-range: entry 0% entry 55%; }
     .reveal-scale { animation: reveal-scale linear both; animation-timeline: view(); animation-range: entry 0% entry 60%; }
     /* children rise one after another */

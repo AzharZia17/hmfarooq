@@ -46,11 +46,11 @@ export function SiteHeader() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow,color,transform] duration-500 ease-[var(--ease-out-expo)]",
         hidden && !open && "max-lg:-translate-y-full motion-reduce:max-lg:translate-y-0",
-        scrolled ? "bg-ink/95 text-white shadow-[0_1px_0_rgb(255_255_255/0.08)] backdrop-blur" : "bg-transparent text-white",
+        scrolled ? "border-b border-white/10 bg-ink/70 text-white shadow-lg shadow-black/25 backdrop-blur-xl backdrop-saturate-150" : "bg-transparent text-white",
       )}
     >
-      <div className="mx-auto flex h-[var(--header-h)] max-w-[1320px] items-stretch justify-between px-5 sm:px-8 lg:px-12">
-        <div className="flex items-start"><Logo priority tone="dark" className="self-center" /></div>
+      <div className={cn("mx-auto flex max-w-[1320px] items-stretch justify-between px-5 transition-[height] duration-500 ease-[var(--ease-out-expo)] sm:px-8 lg:px-12", scrolled ? "h-14" : "h-[var(--header-h)]")}>
+        <div className="flex items-start"><Logo priority tone="dark" className="self-center" imgClassName={cn("transition-[height] duration-500", scrolled && "h-9 sm:h-10")} /></div>
 
         <nav aria-label="Primary" className={"hidden items-center lg:flex"}>
           <ul className="flex items-center gap-1">

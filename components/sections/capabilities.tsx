@@ -29,7 +29,7 @@ const CHAPTERS = [
 /** Three chapters of capability as large alternating photographic panels with an offset text plate. */
 export function Capabilities() {
   return (
-    <Section tone="white">
+    <Section tone="white" id="capabilities">
       <Container>
         <div className="max-w-3xl">
           <Eyebrow n="03" className="reveal">Capabilities</Eyebrow>
@@ -40,13 +40,13 @@ export function Capabilities() {
           {CHAPTERS.map((c, i) => (
             <article key={c.n} className="relative">
               <div className={cn("reveal-clip relative aspect-[4/3] overflow-hidden bg-line sm:aspect-[16/9] lg:aspect-[2/1] lg:w-[78%]", i % 2 === 1 && "lg:ms-auto")}>
-                <Image src={c.img.src} alt={c.img.alt} fill sizes="(min-width:1024px) 62vw, 100vw" className="parallax object-cover" style={{ objectPosition: c.pos }} />
+                <Image src={c.img.src} alt={c.img.alt} fill sizes="(min-width:1024px) 62vw, 100vw" className={i % 2 === 0 ? "parallax object-cover" : "parallax-x object-cover"} style={{ objectPosition: c.pos }} />
               </div>
               <div className={cn("reveal relative z-10 -mt-12 w-[calc(100%-2rem)] bg-ink p-7 text-white sm:-mt-20 sm:w-[28rem] sm:p-9 lg:absolute lg:bottom-[-3rem] lg:mt-0", i % 2 === 0 ? "ms-auto lg:end-0" : "me-auto lg:start-0")}>
                 <p className="label text-gold">Chapter {c.n}</p>
                 <h3 className="display mt-3 text-2xl sm:text-[1.9rem]">{c.title}</h3>
                 <p className="mt-4 text-sm leading-relaxed text-white/70">{c.text}</p>
-                <ul className="mt-5 border-t border-white/15 text-sm">
+                <ul className="stagger mt-5 border-t border-white/15 text-sm">
                   {c.items.map((x) => <li key={x} className="flex items-center gap-3 border-b border-white/10 py-2.5 text-white/85"><span className="size-1 bg-gold" aria-hidden />{x}</li>)}
                 </ul>
                 <Link href={c.href} className="group mt-6 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-gold">

@@ -1,4 +1,5 @@
 import { Hero } from "@/components/sections/hero";
+import { SectionRail } from "@/components/layout/section-rail";
 import { Intro } from "@/components/sections/intro";
 import { ServicesIndex } from "@/components/sections/services-index";
 import { Capabilities } from "@/components/sections/capabilities";
@@ -14,6 +15,7 @@ export default function HomePage() {
       <Capabilities />
       <Approach />
       <QatarContext />
+      <SectionRail />
     </>
   );
 }

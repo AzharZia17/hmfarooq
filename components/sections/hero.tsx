@@ -20,7 +20,7 @@ const BLOCK = "w-fit bg-tint px-3 py-1";
  */
 export function Hero() {
   return (
-    <section aria-labelledby="hero-title" className="relative isolate overflow-hidden bg-ember text-white lg:min-h-[100svh]">
+    <section id="hero" aria-labelledby="hero-title" className="relative isolate overflow-hidden bg-ember text-white lg:min-h-[100svh]">
       {/* half brown, half orange, split on a diagonal */}
       <div aria-hidden className="absolute inset-0 -z-10 bg-ink [clip-path:polygon(0_0,100%_0,100%_17%,0_38%)] lg:[clip-path:polygon(0_0,100%_0,100%_12%,38%_100%,0_100%)]" />
       <Container className="relative flex min-h-[100svh] flex-col pb-[calc(var(--cut)+1.5rem)] pt-24 lg:pb-[calc(var(--cut)+1.5rem)] lg:pt-32">
@@ -42,7 +42,7 @@ export function Hero() {
 
         <div className="relative z-10 lg:max-w-[27rem] xl:max-w-[34rem]">
           <div className="fade-up mt-2 lg:mt-7 flex flex-wrap items-center gap-x-6 gap-y-3" style={d(1.05)}>
-            <Link href="/contact" className={buttonVariants({ variant: "cream", size: "lg" })}>Request a quote <ArrowRight className="nudge" aria-hidden /></Link>
+            <Link href="/contact" className={buttonVariants({ variant: "black", size: "lg" })}>Request a quote <ArrowRight className="nudge" aria-hidden /></Link>
             <Link href="/#services" className="label group inline-flex min-h-12 items-center gap-2 text-white transition-colors hover:text-gold"><span className="u-link pb-1">Explore services</span><ArrowRight className="size-3.5" aria-hidden /></Link>
           </div>
         </div>
